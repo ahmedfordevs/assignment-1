@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            school website
+        </title>
+        <style>
+            body{
+                font-family: Poppins, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+            .hero-container{
+                background-color: #f0f0f0;
+                padding: 20px;
+                text-align: center;
+            }
+            .hero-content{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .hero-logo{
+                width: 100px;
+                height: 100px;
+                margin-bottom: 10px;
+                border-radius: 50%;
+            }
+            .hero-title{
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+            .hero-tagline{
+                font-size: 18px;
+                color: #666;
+            }
+            .nav-container{
+                background-color: #333;
+                padding: 20px;
+                text-align: center;
+                border-bottom: 2px solid #ccc;
+                transition: 0.3s ease;
+            }
+            .nav-link{
+                color: #fff;
+                text-decoration: none;
+                margin-right: 20px;
+                transition: color 0.3 ease;
+            }
+            .nav-link:hover{
+                color: #ccc;
+            }
+            .nav-link.active{
+                color: #fff;
+                border-bottom: 2px solid #ccc;
+            }
+            .nav-container ul{
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: space-between;
+            }
+            .nav-container li{
+                margin-right: 20px;
+            }
+            .nav-container a{
+                transition: 0.3s ease;
+            }
+            .nav-container a:hover{
+                color: #ccc;
+            }
+            .nav-container:hover{
+                background-color: #444;
+            }
+            #home{
+                padding: 20px;
+            }
+            #home h2{
+                font-size: 24px;
+                margin-bottom: 10px
+            }
+            #home p{
+                font-size: 18px;
+                color: #666;
+            }
+            #home button{
+                background-color: #333;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            #home button:hover{
+                background-color: #444;
+            }
+            #about{
+                padding: 20px;
+                text-align: center;
+                background-image: linear-gradient(to bottom, #f000, #cccccc);
+            }
+            #about h2{
+                font-size: 24px;
+                margin-bottom: 10px;
+                color: #333;
+            }
+            #about p{
+                font-size: 24px;
+                color: #666;
+            }
+            #about img{
+                width: 100px;
+                height: 100px;
+                margin-bottom: 10px;
+                border-radius: 50%;
+            }
+            #academics{
+                padding: 20px;
+                text-align: center;
+                background-image: linear-gradient(to bottom, #f0f0f0, #cccccc);
+            }
+            #academics h2{
+                font-size: 24px;
+                margin-bottom: 10px;
+                color: #333;
+            }
+            #academics p{
+                font-size: 18px;
+                color: #666;
+            }
+            #academics ul{
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            #academics li{
+                margin-bottom: 10px;
+            }
+            #admission{
+                padding: 20px;
+                text-align: center;
+                background-image: linear-gradient(to bottom, #f0f0f0, #cccccc);
+            }
+            #admission h2{
+                font-size: 24px;
+                margin-bottom: 10px;
+                color: #333;
+            }
+            #admission p{
+                font-size: 18px;
+                color: #666;
+            }
+            #admission form{
+                margin-top: 20px;
+            }
+            #admission input, #admission textarea{
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: none;
+                border-radius: 5px;
+            }
+            #admission button{
+                background-color: #333;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            #admission button:hover{
+                background-color: #444;
+            }
+            #contact{
+                padding: 20px;
+                text-align: center;
+                background-image: linear-gradient(to bottom, #f0f0f0, #cccccc);
+            }
+            #contact h2{
+                font-size: 24px;
+                margin-bottom: 10px;
+                color: #333;
+            }
+            #contact p{
+                font-size: 18px;
+                color: #666;
+            }
+            #contact form{
+                margin-top: 20px;
+            }
+            #contact input, #contact textarea{
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: none;
+                border-radius: 5px;
+            }
+            #contact button{
+                background-color: #333;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            #contact button:hover{
+                background-color: #444;
+            }
+            #featured{
+                background-color: #f0f0f0;
+                padding: 20px;
+                text-align: center;
+            }
+            .featured-content{
+                display: flex;
+                justify-content: space-between;
+            }
+            .featured-item{
+                margin-right: 20px;
+            }
+            .featured-item h3{
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+            .featured-item p{
+                font-size: 18px;
+                color: #666;
+            }
+            #highlights{
+                background-color: #f0f0f0;
+                padding: 20px;
+                text-align: center;
+            }
+            .highlights-content{
+                display: flex;
+                justify-content: space-between;
+            }
+            .highlights-item{
+                margin-right: 20px;
+            }
+
+            .highlights-item h3{
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+            .highlights-item p{
+                font-size: 18px;
+                color: #666;
+            }
+            #cta{
+                background-color: #333;
+                padding: 20px;
+                text-align: center;
+                color: #fff;
+            }
+            #cta h2{
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+            #cta p{
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+            #cta button{
+                background-color: #fff;
+                color: #333;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            #cta button:hover{
+                background-color: #ccc;
+            }
+            #about{
+                padding: 20px;
+                text-align: center;
+                background-color: #f0f0f0;
+            }
+            #about h2{
+                font-size: 24px;
+                margin-bottom: 10px;
+                color: #333;
+            }
+            #about p{
+                font-size: 18px;
+                color: #666;
+            }
+            #about ul{
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: space-between;
+            }
+            #about li{
+                margin-bottom: 10px;
+            }
+            #about .campus-photos{
+                display: flex;
+                justify-content: space-between;
+                margin-top: 20px;
+            }
+            #about .campus-photos img{
+                width: 30%;
+                height: 200px;
+                margin-right: 20px;
+                border-radius: 10px;
+            }
+            #academics{
+                padding: 20px;
+                text-align: center;
+                background-color: #f0f0f0;
+            }
+            #academics h2{
+                font-size: 24px;
+                margin-bottom: 10px;
+                color: #333;
+            }
+            #academics ul{
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            #academics li{
+                margin-bottom: 10px;
+            }
+            #academics table{
+                width: 100%;
+                border-collapse: collapse;
+            }
+            #academics th, #academics td{
+                border: 1px, solid #ddd;
+                padding: 10px;
+                text-align: left;
+            }
+            #academics th{
+                background-color: #333;
+                color: #fff;
+            }
+            #academics td{
+                border-bottom: 1px solid #ddd;
+            }
+            #academics ol{
+                list-style: decimal;
+                margin: 0;
+                padding: 0;
+            }
+            #academics ol li{
+                margin-bottom: 10px;
+            }
+            #download{
+                background-color: #f0f0f0;
+                padding: 20px;
+                text-align: center;
+                border: 1px solid #ddd;
+            }
+            #download h2{
+                margin-bottom: 10px;
+                color: #333;
+            }
+            #download a{
+                color: #333;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+            #download a:hover{
+                color: #ccc;
+            }
+            #news{
+                background-color: #f0f0f0;
+                padding: 20px;
+                text-align: center;
+                border: 1px solid #ddd;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            #news h2{
+                margin-bottom: 10px;
+                color: #333;
+            }
+            #news article{
+                margin-bottom: 20px;
+                padding: 20px;
+                border-bottom: 1px solid #ddd;
+            }
+            #news article h3{
+                margin-bottom: 10px;
+                color: #333;
+            }
+            #blogs{
+                background-color: #f0f0f0;
+                padding: 20px;
+                text-align: center;
+                border: 1px solid #ddd;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            #blogs h2{
+                margin-bottom: 10px;
+                color: #333;
+            }
+            #blogs article{
+                margin-bottom: 20px;
+                padding: 20px;
+                border-bottom: 1px solid #ddd;
+            }
+            #blogs article h3{
+                margin-bottom: 10px;
+                color: #333;
+            }
+            #individual-blog {
+                background-color: #f0f0f0;
+                padding: 20px;
+                text-align: center;
+                border: 1px solid #ddd;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            #individual-blog h2{
+                margin-bottom: 10px;
+                color: #333;
+            }
+            #gallery{
+                background-color: #f0f0f0;
+                padding: 20px;
+                text-align: center;
+                border: 1px solid #ddd;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            #gallery h2{
+                margin-bottom: 10px;
+                color: #333;
+            }
+            #gallery .slideshow{
+                width: 80%;
+                margin: 40px auto;
+            }
+            #gallery .slideshow img{
+                width: 100%;
+                height: 500px;
+                margin-bottom: 20px;
+            }
+            #contact{
+                background-color: #f0f0f0;
+                padding: 20px;
+                text-align: center;
+                border: 1px solid #ddd;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            #contact h2{
+                margin-bottom: 10px;
+                color: #333;
+            }
+            #contact form{
+                margin-top: 20px;
+            }
+            #contact form label{
+                display: block;
+                margin-bottom: 10px;
+            }
+            #contact form input, #contact form textarea{
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 20px;
+                border: none;
+            }
+            #contact form button{
+                background-color: #333;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
+            }
+            #contact form button:hover{
+                background-color: #ccc;
+            }
+
+
+
+        </style>
+    </head>
+    <body>
+        <section class="hero-container">
+            <div class="hero-container">
+                <img src="1.jpg" alt="school logo" class="hero-logo">
+                <h1>Tagline</h1>
+            </div>
+        </section>
+        <nav class="nav-container">
+            <ul>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#academics" class="nav-link">Academics</a></li>
+                <li><a href="#admission" class="nav-link">Admission</a></li>
+                <li><a href="#contact" class="nav-link">Contact Us</a></li>
+                
+            </ul>
+        </nav>
+        <section id="home">
+            <h2>Welcome to our School</h2>
+            <p>Welcome to our school website, you can find anything that has access yo our school management.</p>
+        </section>
+        <section id="about">
+            <h2>About Our School</h2>
+            <p>our school management build in 2009 in kano state, and has two branch in the state. our school management 
+                has many sections like secondary section and college section.
+            </p>
+            <img src="3.jpg" alt="About image">
+        </section>
+        <section id="academics">
+            <h2>Academics</h2>
+            <p>we have some academics program in school management</p>
+            <ul>
+                <li>Academics program 1</li>
+                <li>Academics program 2</li>
+                <li>Academics program 3</li>
+            </ul>
+        </section>
+        <section id="admission">
+            <h2>Admission</h2>
+            <p>we have some renewal admission in this school management</p>
+            <button>Apply Now</button>
+        </section>
+        <section id="contact">
+            <h2>Get in Touch</h2>
+              <p>you can contact us in this website about school management</p>
+              <form>
+                <input type="name" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="message"></textarea>
+                <button>Send</button>
+              </form>
+        </section>
+        <section id="featured">
+            <h2>Latest News & Annoucements</h2>
+            <div class="featured-content">
+                <div class="featured-item">
+                    <h3>News Title</h3>
+                    <p>News description</p>
+                </div>
+            </div>
+        </section>
+        <section id="highlights">
+            <h2>highlights of achievements/Events</h2>
+            <div class="highlights-content">
+                <div class="highlights-item">
+                    <img src="1.jpg" alt="4 image">
+                    <h3>Events/Acheivement Title</h3>
+                    <p>Events/acheivement description</p>
+                </div>
+                <div class="highlights-item">
+                    <img src="2349069799955_status_5ef0a4a2b7b5424b9937ca3649010e25.jpg" alt="image 2">
+                    <h3>Events/ Acheivement title</h3>
+                    <p>Events/ Acheivement description</p>
+                </div>
+            </div>
+        </section>
+        <section id="cta">
+            <h2>Enroll Now</h2>
+            <p>join our management today</p>
+            <button>Enroll</button>
+        </section>
+        <section id="about">
+            <h2>Brief History Of Our School</h2>
+            <p>this school management was build in 2009 and established in the year, and we have two section in this school. 
+                the sections are secondary, and college section.
+            </p>
+            <h2>Mission, Vision, and Core Values</h2>
+            <ul>
+                <li>MISSION:<br> creating conductive learning environment<br> that provide virtue prepare teacher education<br> through achievable educational goals for professional
+                    functions,<br> social mobility that transform qualified to actively participate in social transformation.
+                </li>
+                <li>VISION:<br> integrate acquired experiences<br> for all round development in sound education.</li>
+                <li>CORE VALUES:<br> -academic excellence<br> -discipline<br> -cooperative<br> -team work<br> -truth.</li>
+            </ul>
+            <h2>Our Campus</h2>
+            <div class="Campus-photos">
+                <img src="ri.jpg" alt="Campus-photos 1">
+                <img src="rr.jpg" alt="Campus-photos 2">
+                <img src="rt.jpg" alt="Campus-photos 3">
+                <img src="ru.jpg" alt="Campus-photos 4">
+                <img src="ry.jpg" alt="Campus-photos 5">
+            </div>
+        </section>
+        <section id="academics">
+            <h2>Academics programs</h2>
+            <ul>
+                <li>NCE PROGRAMME</li>
+                <li>PRE-NCE PROGRAMME</li>
+                <li>FULL TIME PROGRAMME</li>
+                <li>PART TIME PROGRAMME</li>
+            </ul>
+            <h2>Departments/Faculties</h2>
+            <ul>
+                <li>Arts Departments</li>
+                <li>Mathematics Departments</li>
+                <li>Science Departments</li>
+                <li>Computer science Departments</li>
+            </ul>
+            <h2>Academics Calender/Class Schedules</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dtae</th>
+                        <th>Events</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2025-01-01</td>
+                        <td>New Year`s Day</td>
+                    </tr>
+                    <tr>
+                        <td>2025-01-24</td>
+                        <td>Semester Begins</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>Admission Requirements</h2>
+            <ul>
+                <li>UTME Result</li>
+                <li>Secondary School Certificate</li>
+                <li>SSCE Result</li>
+            </ul>
+            <h2>Admission Process</h2>
+            <ol>
+                <li>Registration</li>
+                <li>Applying for Admission</li>
+                <li>Admission check list</li>
+            </ol>
+        </section>
+        <section id="download">
+            <h2>Download Form</h2>
+            <a href="create account.html">Download form</a>
+            <h2>Contact Details</h2>
+            <p>Email:ahmedtijjani420@gmail.com</p>
+            <p>phone:07043739629</p>
+        </section>
+        <section id="news">
+            <h2>Latest News</h2>
+            <article>
+                <h3>Matriculation</h3>
+                <p>school management conducted Matriculation for the fresh student, and it will occur in 2025-01-24, at the school premesis</p>
+            </article>
+            <article>
+                <h3>world philosophy day</h3>
+                <p>the management of school has conducted live event at the school for inter-schools competitions, and philosophical discussions.</p>
+            </article>
+        </section>
+        <section id="blogs">
+            <h2>Latest Blogs</h2>
+            <article>
+                <h3>Blog Title</h3>
+                <p>Blog content</p>
+            </article>
+        </section>
+        <article id="individual-blog">
+            <h2>Blog Title</h2>
+            <p>Blog content</p>
+        </article>
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <div class="slideshow">
+                <img src="ri.jpg" alt="image 1">
+                <img src="ru.jpg" alt="image 1">
+                <img src="rt.jpg" alt="image 1">
+                <img src="ry.jpg" alt="image 1"> 
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message"></textarea>
+                <button>Send</button>
+            </form>
+            <p>Address:[No:84 Dogarai]</p>
+            <p>Contact info:[07043739629, 07017932498]</p>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instgram</a></li>
+            </ul>
+        </section>
+    </body>
+</html>
